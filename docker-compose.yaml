@@ -1,0 +1,16 @@
+services:
+  mongo:
+    image: mongo:latest
+    volumes:
+      - data:/data/db
+
+  # util service
+  python-poetry:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/python-poetry.Dockerfile
+    volumes:
+      - ./apps/back:/app
+
+volumes:
+  data:
