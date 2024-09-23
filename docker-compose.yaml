@@ -7,10 +7,16 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/back.Dockerfile
+    depends_on:
+      - mongo
+    ports:
+      - "8000:8000"
   front:
     build:
       context: .
       dockerfile: ./dockerfiles/front.Dockerfile
+    depends_on:
+      - back
       
   # util service
   python-poetry:
