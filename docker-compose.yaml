@@ -17,6 +17,8 @@ services:
       dockerfile: ./dockerfiles/front.Dockerfile
     depends_on:
       - back
+    ports:
+      - "8080:8080"
       
   # util service
   python-poetry:
