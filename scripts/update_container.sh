@@ -1,5 +1,7 @@
 #!/bin/sh
 
+RUN chmod +x /home/ec2-user/scripts/update_container.sh
+
 # 변수 설정
 IMAGE_NAME="tiaz0128/fast-api"
 CONTAINER_NAME="fast-api"

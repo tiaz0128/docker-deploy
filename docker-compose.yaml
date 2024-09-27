@@ -24,14 +24,15 @@ services:
   python-poetry:
     build:
       context: .
-      dockerfile: ./dockerfiles/python-poetry.Dockerfile
+      dockerfile: ./dockerfiles/util/python-poetry.Dockerfile
     volumes:
       - ./apps/back:/app
 
+  # util service
   react:
     build:
       context: .
-      dockerfile: ./dockerfiles/react.Dockerfile
+      dockerfile: ./dockerfiles/util/react.Dockerfile
     volumes:
       - ./apps/front:/app/my-app
 
