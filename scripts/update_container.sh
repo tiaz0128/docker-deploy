@@ -13,6 +13,6 @@ docker pull $IMAGE_NAME:latest
 docker stop $CONTAINER_NAME
 
 # 새 컨테이너 시작
-docker run -d --rm --name $CONTAINER_NAME $IMAGE_NAME:latest
+docker run -d --rm --name -p 8000:8000 $CONTAINER_NAME $IMAGE_NAME:latest
 
 echo "Container updated and restarted"
