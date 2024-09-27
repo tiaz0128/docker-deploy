@@ -5,7 +5,7 @@ phases:
   build:
     commands:
       - echo "Hello World"
-      - docker build -t fast-api -f dockerfiles/back.Dockerfile .
+      - docker build -t tiaz0128/fast-api -f dockerfiles/back.Dockerfile .
   post_build:
     commands:
       - echo Build completed on `date`
