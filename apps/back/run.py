@@ -1,23 +1,29 @@
-import logging
-import os
-import subprocess
-
 from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
+
 
 app = FastAPI()
 
 
 @app.get("/")
-def welcome_root():
-    return {"message": "Hello FastAPI"}
+def health(response_class=PlainTextResponse):
+    return "healthy"
 
 
-@app.post("/api/v1/containers/{container_id}/update")
-def update_container(container_id: str):
-    # 웹훅 수신 시 update_container.sh 스크립트 실행
-    logging.info(f"Update container: {container_id}")
-    script_path = os.path.join(
-        os.path.dirname(__file__), "scripts", "update_container.sh"
-    )
-    subprocess.call([script_path])
-    return "OK", 200
+@app.get("/{arg}")
+def whale_say(arg: str, response_class=PlainTextResponse):
+    return f'''
+    < {arg} >
+     ----- 
+            \\
+             \\
+                \\     
+                                            ##        .            
+                                ## ## ##       ==            
+                         ## ## ## ##      ===            
+                 /""""""""""""""""___/ ===        
+        ~~~ {{~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+                 \\______ o          __/            
+                    \\    \\        __/             
+                        \\____\\______/   
+'''
