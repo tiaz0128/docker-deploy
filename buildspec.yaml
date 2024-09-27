@@ -1,0 +1,9 @@
+
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Hello World"
+      - docker build -t fast-api -f dockerfiles/back.Dockerfile .
+  
