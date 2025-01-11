@@ -9,9 +9,6 @@ CONTAINER_NAME="fast-api"
 # 최신 이미지 pull
 docker pull $IMAGE_NAME:latest
 
-# 기존 컨테이너 중지 및 제거
-docker stop $CONTAINER_NAME
-
 # 새 컨테이너 시작
 docker run -d --rm --name $CONTAINER_NAME -p 8000:8000 $IMAGE_NAME:latest
 

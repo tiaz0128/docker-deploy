@@ -1,9 +1,11 @@
 services:
   mongo:
+    container_name: docker-mongo
     image: mongo:latest
     volumes:
       - data:/data/db
   back:
+    container_name: docker-fastapi
     build:
       context: .
       dockerfile: ./dockerfiles/back.Dockerfile
@@ -12,6 +14,7 @@ services:
     ports:
       - "8000:8000"
   front:
+    container_name: docker-react
     build:
       context: .
       dockerfile: ./dockerfiles/front.Dockerfile
